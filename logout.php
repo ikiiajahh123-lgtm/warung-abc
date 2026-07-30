@@ -12,7 +12,7 @@ if (isset($_SESSION['id_user'])) {
     mysqli_quert($koneksi, $log);
 }
 
-sessiosn_unset();
+session_unset();
 session_destroy();
 
 header('location: login.php');

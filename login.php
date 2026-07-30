@@ -8,27 +8,30 @@
 
     <?php
     session_start();
-    if (isset($_session['pesan_error'])) {
-        echo '<p>' . $_session['pesan_error']. '</p>';
-        unset($_session['pesan_error']);
+    if (isset($_SESSION['pesan_error'])) {
+        echo '<p>' . $_SESSION['pesan_error']. '</p>';
+        unset($_SESSION['pesan_error']);
 
     }
     ?>
 
-    <from action="proses_login.php" method="post">
+    <form action="proses_login.php" method="post">
         <table>
             <tr>
                 <td>username</td>
                 <td>:</td>
                 <td><input type="text" name="username" required></td>
-</tr>
-<tr>
-     <td colspan="3">
-        <input type="submit" value="login">
-                 
-              </td>
+            </tr>
+            <tr>
+                 <td>password</td>
+                 <td>:</td>
+                 <td><input type="password" name="password" required></td>
+            </tr>
+             <tr>
+                <td colspan="3">
+                    <input type="submit" value="login"></td>
             </tr>
          </table>
-      </from>
+    </form>
    </body>
 </html>
