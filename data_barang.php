@@ -23,7 +23,7 @@ $hasil = mysqli_query($koneksi, $sql);
        <td><?php echo $row['nama_barang']; ?></td>
        <td><?php echo number_format ($row['harga_satuan'],0,",", "."); ?></td>
        <td><?php echo $row['stok']; ?></td>
-       <td><?php echo $row['tanggal_kedaluarsa']; ?></td>
+       <td><?php echo $row['tanggal_kadaluarsa']; ?></td>
        <td>
             <a href="edit_barang.php?id=<?php echo $row['id_barang']; ?>">Edit</a> |
             <a href="hapus_barang.php?id=<?php echo $row['id_barang']; ?>'

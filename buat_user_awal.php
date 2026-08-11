@@ -1,19 +1,29 @@
 <?php
-// buat_user_awal.php
-// jalankan file ini satu kali saja lewat browser untuk membuat user awal 
 include 'config/koneksi.php';
 
-$nama ='Adinistrator';
-$username ='admin';
-$password =password_hash('admin123', PASSWORD_DEFAULT);
-$role ='admin';
+$sql = "SELECT * FROM tbl_user LIMIT 1";
+$hasil = mysqli_query($koneksi, $sql);
 
-$sql ="INSERT INTO tbl_user (nama_lengkap, username, password, role)";
-$sql .= "VALUES ('$nama', '$username', '$password', '$role')";
+if (!$hasil) {
+    die("Query gagal: " . mysqli_error($koneksi));
+}
 
-if  (mysql_query($koneksi, $sql)) {
-    echo 'user admin berhasil di buat. silahkan hapus file ini.';
+if (mysqli_num_rows($hasil) > 0) {
+    echo "User sudah ada. Silakan login.";
+    exit;
+}
+
+$password = password_hash("admin123", PASSWORD_DEFAULT);
+
+$sql = "INSERT INTO tbl_user (username, password)
+        VALUES ('admin', '$password')";
+
+if (mysqli_query($koneksi, $sql)) {
+    echo "User admin berhasil dibuat.<br>";
+    echo "Username: admin<br>";
+    echo "Password: admin123<br><br>";
+    echo "<a href='login.php'>Login</a>";
 } else {
-    echo 'gagal membuat user: ' . mysqli_error($koneksi);
+    echo "Gagal membuat user: " . mysqli_error($koneksi);
 }
 ?>

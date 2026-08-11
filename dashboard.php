@@ -7,7 +7,7 @@ include 'includes/cek_session.php';
 <head>
     <title> dashboard - warung abc</title></head>
 <body>
-    <h1>selanat datang, <?php echo $_SESSION['nama_lengkap']; ?></h1>
+    <h1>selamat datang, <?php echo $_SESSION['nama_lengkap']; ?></h1>
     <p> anda login sebagai: <?php echo $_SESSION['role']; ?></p>
 
     <ul>

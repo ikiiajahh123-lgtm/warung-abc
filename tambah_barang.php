@@ -4,7 +4,7 @@
     <head><title> Tambah Barangg - Warung ABC</title></head>
 <body>
      <h1>Tambah Barang</h1>
-     <from action="proses_tambah_barang.php" method="POST">
+     <form action="proses_tambah_barang.php" method="POST">
         <table>
             <tr><td> Kode Barang</td><td>:</td>
                  <td><input type="text" name="kode_barang" required></td></tr>
@@ -19,7 +19,7 @@
             <tr><td colspan="3"><input type="submit" value="Simpan"></td></tr>
         
                 </table>
-            </from>
+            </form>
         <p><a href="data_barang.php">Kembali</a></p>
     </body>
 </html>
