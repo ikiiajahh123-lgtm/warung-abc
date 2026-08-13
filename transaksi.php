@@ -6,6 +6,8 @@ include 'config/koneksi.php';
 if (!isset($_SESSION['keranjang'])) {
     $_SESSION['keranjang'] = array();
 }
+$sql_pelanggan ="SELECT * FROM tbl_pelanggan ORDER BY nama_pelanggan ASC";
+$hasil_pelanggan = mysqli_query($koneksi, $sql_pelanggan);
 
 $daftar_barang = mysqli_query($koneksi, "SELECT * FROM tbl_barang WHERE stok > 0");
 $total = 0;
@@ -37,6 +39,17 @@ foreach ($_SESSION['keranjang'] as $item) {
             <input type="submit" value="Tambah ke Keranjang">
         </form>
 
+        <form action="proses_simpan_transaksi.php" method="POST>
+              Pelanggan:
+              <select nama="id_pelanggan">
+                 <option value="">-- Pelanggan Umum --</option>
+                 <?php while ($p = mysqli_fetch_assoc($hasil_pelanggan)) { ?>
+                <option value"<?php echo $p['id_pelanggan']; ?>">
+                    <?php echo $p['nama_pelanggan']; ?></option>
+                <?php } ?>
+           </select>
+       <input type="submit" value="simpan transaksi">
+</form>
         <h3>Keranjang</h3>
         <table border="1" cellpadding="6">
             <tr><th>Nama Barang</th><th>Harga</th><th>Jumlah</th><th>Subtotal</th><th>Aksi</th></tr>
