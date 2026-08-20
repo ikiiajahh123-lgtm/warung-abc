@@ -11,7 +11,7 @@
             <tr><td> Nama Barang</td><td>:</td>
                  <td><input typ="text" name="nama_barang"  required></td></tr>
             <tr><td>Harga Satuan</td><td>:</td>
-                 <td><input type="number" nama="harga_satuan" step="0.01"   required></td></tr>
+                 <td><input type="number" name="harga_satuan" step="0.01" required></td></tr>
             <tr><td>Stok</td><td>:</td>
                  <td><input type="number" name="stok" required></td></tr>
             <tr><td>Tangal Kadaluarsa</td><td>:</td>

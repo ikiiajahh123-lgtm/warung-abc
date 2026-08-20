@@ -22,7 +22,7 @@ foreach ($_SESSION['keranjang'] as $item) {
 }
 
 $sql = "INSERT INTO tbl_transaksi (no_transaksi, tanggal, id_kasir, id_pelanggan, total_bayar)";
-$sql .= "values ('$no_transaksi', '$id_kasir', '$id_pelanggan_sql, '$total')";
+$sql .= "values ('$no_transaksi', '$tanggal', '$id_kasir', '$id_pelanggan_sql', '$total')";
 
 mysqli_query($koneksi, $sql);
 $id_transaksi = mysqli_insert_id($koneksi);

@@ -39,16 +39,15 @@ foreach ($_SESSION['keranjang'] as $item) {
             <input type="submit" value="Tambah ke Keranjang">
         </form>
 
-        <form action="proses_simpan_transaksi.php" method="POST>
+        <form action="proses_simpan_transaksi.php" method="POST">
               Pelanggan:
-              <select nama="id_pelanggan">
+              <select name="id_pelanggan">
                  <option value="">-- Pelanggan Umum --</option>
                  <?php while ($p = mysqli_fetch_assoc($hasil_pelanggan)) { ?>
                 <option value"<?php echo $p['id_pelanggan']; ?>">
                     <?php echo $p['nama_pelanggan']; ?></option>
                 <?php } ?>
            </select>
-       <input type="submit" value="simpan transaksi">
 </form>
         <h3>Keranjang</h3>
         <table border="1" cellpadding="6">
